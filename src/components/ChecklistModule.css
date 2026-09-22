@@ -1,0 +1,87 @@
+/* src/components/modules/ChecklistModule.css */
+.cadence-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cadence-checklist__header h2 {
+    font-size: 1.3rem;
+    color: var(--pulse-primary);
+    margin-bottom: 4px;
+}
+
+.cadence-checklist__header p {
+    font-size: 0.85rem;
+    color: var(--pulse-text-muted);
+}
+
+.cadence-checklist__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.cadence-card {
+    background: #ffffff;
+    border: 1px solid var(--pulse-border);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cadence-card__title {
+    font-size: 1rem;
+    color: var(--pulse-primary);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--pulse-border);
+    margin-bottom: 12px;
+}
+
+.cadence-card__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cadence-card__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 0.85rem;
+}
+
+.cadence-card__label {
+    color: var(--pulse-text-main);
+    flex: 1;
+}
+
+.cadence-card__actions {
+    display: flex;
+    gap: 6px;
+}
+
+.btn-check {
+    border: 1px solid var(--pulse-border);
+    background: #f1f5f9;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-check--ok {
+    background-color: var(--pulse-status-ok);
+    color: #ffffff;
+    border-color: var(--pulse-status-ok);
+}
+
+.btn-check--fail {
+    background-color: var(--pulse-status-alert);
+    color: #ffffff;
+    border-color: var(--pulse-status-alert);
+}

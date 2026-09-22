@@ -1,0 +1,92 @@
+/* src/components/Navbar.css */
+.pulse-navbar {
+    background-color: var(--pulse-primary);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 52px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pulse-navbar__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pulse-navbar__logo-icon {
+    font-size: 1.3rem;
+}
+
+.pulse-navbar__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.pulse-navbar__badge {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.pulse-navbar__nav {
+    display: flex;
+    height: 100%;
+}
+
+.pulse-navbar__item {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 0 18px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.pulse-navbar__item:hover {
+    background-color: var(--pulse-primary-dark);
+    color: #ffffff;
+}
+
+.pulse-navbar__item--active {
+    color: #ffffff;
+    border-bottom-color: var(--pulse-accent);
+    background-color: var(--pulse-primary-dark);
+}
+
+.pulse-navbar__status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+.pulse-navbar__status-indicator {
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.pulse-navbar__status-indicator--available {
+    background-color: var(--pulse-status-ok);
+    color: #ffffff;
+}
+
+.pulse-navbar__status-indicator--busy {
+    background-color: var(--pulse-status-alert);
+    color: #ffffff;
+}
