@@ -1,0 +1,22 @@
+{
+    "short_name": "Cadence",
+    "name": "CADENCE - CADIS Emergency ERP",
+    "icons": [
+        {
+            "src": "pwa-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "pwa-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#0f172a",
+    "theme_color": "#1e293b",
+    "display": "standalone",
+    "orientation": "landscape-primary"
+}

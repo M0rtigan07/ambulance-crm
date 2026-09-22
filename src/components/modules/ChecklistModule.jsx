@@ -19,7 +19,7 @@ export const ChecklistModule = () => {
         ],
         inmovilizacion: [
             { id: 'i1', label: 'Juego de collarines cervicales (Tallas completa)', status: 'ok' },
-            { id: 'i2', label: 'Tablero espinal / Dama de Noche y correas', status: 'ok' },
+            { id: 'i2', label: 'Tablero espinal / Dama de Elche y correas', status: 'ok' },
             { id: 'i3', label: 'Colchón de vacío y bomba de aspiración', status: 'ok' },
             { id: 'i4', label: 'Maletín de Soporte Vital y material de curas', status: 'ok' }
         ]

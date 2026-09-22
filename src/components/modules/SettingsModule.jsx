@@ -2,7 +2,33 @@
 import React, { useState, useEffect } from 'react';
 import './SettingsModule.css';
 
+let deferredPrompt;
+
 export const SettingsModule = () => {
+
+    const [canInstall, setCanInstall] = useState(false);
+
+    useEffect(() => {
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            setCanInstall(true);
+        });
+    }, []);
+
+    const handleInstallClick = () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    setCanInstall(false);
+                }
+                deferredPrompt = null;
+            });
+        }
+    };
+
+
     // Estados de preferencias de usuario
     const [theme, setTheme] = useState(localStorage.getItem('cadence_theme') || 'light');
     const [fontSize, setFontSize] = useState(localStorage.getItem('cadence_fontSize') || 'medium');
@@ -114,11 +140,28 @@ export const SettingsModule = () => {
                     </div>
                 </div>
 
+                {/* PANEL DE INSTALACIÓN PWA */}
+                <div className="cadence-card">
+                    <h3 className="cadence-card__title">📱 Instalación en Tablet / Dispositivo Embarcado</h3>
+                    <p className="settings-info-text">
+                        Convierte CADENCE en una aplicación nativa ejecutable sin barra de navegador.
+                    </p>
+                    {canInstall ? (
+                        <button className="btn-option btn-option--active" onClick={handleInstallClick}>
+                            📲 Instalar CADENCE en esta Tablet
+                        </button>
+                    ) : (
+                        <p className="settings-info-text" style={{ color: 'var(--pulse-status-ok)' }}>
+                            ✓ La aplicación ya está lista o instalada en este navegador.
+                        </p>
+                    )}
+                </div>
+
                 {/* PANEL 3: PREPARACIÓN PARA BASE DE DATOS Y USUARIOS */}
                 <div className="cadence-card">
                     <h3 className="cadence-card__title">🗄️ Servidor y Conectividad (Próximamente)</h3>
                     <p className="settings-info-text">
-                        Conexión con PostgreSQL y módulo de autenticación para técnicos (TES 1 / TES 2)[cite: 1].
+                        Conexión con PostgreSQL y módulo de autenticación para técnicos (TES 1 / TES 2)
                     </p>
                     <div className="settings-status-box">
                         <span>Base de Datos PostgreSQL: <strong>Pendiente de conectar</strong></span>

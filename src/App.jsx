@@ -3,15 +3,21 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar.jsx';
 import { ChecklistModule } from './components/modules/ChecklistModule.jsx';
 import { SettingsModule } from './components/modules/SettingsModule.jsx';
+import { SplashScreen } from './components/common/SplashScreen.jsx';
 import './index.css';
 
 export function App() {
+  const [loading, setLoading] = useState(true);
   const [activeModule, setActiveModule] = useState('checklist');
 
   const [ambulanceStatus] = useState({
     type: 'available',
     label: 'Operativa / En Base'
   });
+
+  if (loading) {
+    return <SplashScreen onFinish={() => setLoading(false)} />;
+  }
 
   return (
     <div className="app-container">
