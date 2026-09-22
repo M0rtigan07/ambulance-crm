@@ -5,11 +5,27 @@ import './Navbar.css';
 export const Navbar = ({ activeModule, setActiveModule, ambulanceStatus }) => {
     return (
         <header className="pulse-navbar">
-            {/* 1. Marca Oficial Cadence */}
+            {/* 1. Marca Oficial Cadence con Tooltip Interactivo */}
             <div className="pulse-navbar__brand">
                 <span className="pulse-navbar__logo-icon">🚑</span>
-                <h1 className="pulse-navbar__title">CADENCE</h1>
-                <span className="pulse-navbar__badge">CADIS System v1.0</span>
+                <div className="pulse-navbar__title-container">
+                    <h1
+                        className="pulse-navbar__title"
+                        title="Computer-Aided Dispatch & Emergency System"
+                    >
+                        CADENCE
+                    </h1>
+                    <span
+                        className="pulse-navbar__badge"
+                        title="Computer-Aided Dispatch & Emergency System"
+                    >
+                        CADIS System v1.0
+                        {/* Mensaje flotante visual al pasar el ratón */}
+                        <span className="pulse-navbar__tooltip">
+                            Computer-Aided Dispatch & Emergency System
+                        </span>
+                    </span>
+                </div>
             </div>
 
             {/* 2. Navegación por Módulos */}
@@ -46,7 +62,9 @@ export const Navbar = ({ activeModule, setActiveModule, ambulanceStatus }) => {
             {/* 3. Indicador de Estado + Candence AI */}
             <div className="pulse-navbar__status">
                 <span className="pulse-navbar__status-label">AI Candence:</span>
-                <span className="pulse-navbar__ai-badge">🟢 Online (Groq)</span>
+                <span className="pulse-navbar__ai-badge" title="Asistente de IA conectado mediante Groq API">
+                    🟢 Online (Groq)
+                </span>
                 <span className={`pulse-navbar__status-indicator pulse-navbar__status-indicator--${ambulanceStatus.type}`}>
                     {ambulanceStatus.label}
                 </span>
