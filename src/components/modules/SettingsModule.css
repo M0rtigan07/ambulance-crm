@@ -1,0 +1,98 @@
+/* src/components/modules/SettingsModule.css */
+.settings-module {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.settings-module__header h2 {
+    font-size: 1.3rem;
+    color: var(--pulse-primary);
+    margin-bottom: 4px;
+}
+
+.settings-module__header p {
+    font-size: 0.85rem;
+    color: var(--pulse-text-muted);
+}
+
+.settings-module__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.settings-field {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.settings-field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--pulse-text-main);
+}
+
+.settings-options {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-option {
+    border: 1px solid var(--pulse-border);
+    background: #f8fafc;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-option:hover {
+    background-color: #e2e8f0;
+}
+
+.btn-option--active {
+    background-color: var(--pulse-primary);
+    color: #ffffff;
+    border-color: var(--pulse-primary);
+}
+
+.settings-info-text {
+    font-size: 0.8rem;
+    color: var(--pulse-text-muted);
+    margin-bottom: 12px;
+}
+
+.settings-status-box {
+    background-color: #f1f5f9;
+    border: 1px solid var(--pulse-border);
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.8rem;
+}
+
+/* Soporte para Modo Oscuro Nocturno */
+body.dark-mode {
+    --pulse-bg: #0f172a;
+    --pulse-text-main: #f8fafc;
+    --pulse-text-muted: #94a3b8;
+    --pulse-border: #334155;
+}
+
+body.dark-mode .cadence-card {
+    background-color: #1e293b;
+}
+
+body.dark-mode .settings-status-box,
+body.dark-mode .btn-option {
+    background-color: #334155;
+    color: #ffffff;
+}

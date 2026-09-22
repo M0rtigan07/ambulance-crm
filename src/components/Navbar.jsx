@@ -34,6 +34,13 @@ export const Navbar = ({ activeModule, setActiveModule, ambulanceStatus }) => {
                 >
                     📍 Despacho & GPS
                 </button>
+
+                <button
+                    className={`pulse-navbar__item ${activeModule === 'settings' ? 'pulse-navbar__item--active' : ''}`}
+                    onClick={() => setActiveModule('settings')}
+                >
+                    ⚙️ Ajustes
+                </button>
             </nav>
 
             {/* 3. Indicador de Estado + Candence AI */}

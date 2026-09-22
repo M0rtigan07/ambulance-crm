@@ -1,7 +1,8 @@
 // src/App.jsx
 import React, { useState } from 'react';
-import { Navbar } from './components/Navbar';
-import { ChecklistModule } from './components/modules/ChecklistModule';
+import { Navbar } from './components/Navbar.jsx';
+import { ChecklistModule } from './components/modules/ChecklistModule.jsx';
+import { SettingsModule } from './components/modules/SettingsModule.jsx';
 import './index.css';
 
 export function App() {
@@ -37,6 +38,8 @@ export function App() {
               <p>Siguiente paso: Integración del mapa Leaflet interactivo.</p>
             </div>
           )}
+
+          {activeModule === 'settings' && <SettingsModule />}
         </main>
       </div>
     </div>
